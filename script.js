@@ -273,3 +273,18 @@ if (localStorage.getItem("theme") === "dark") {
     themeToggle.innerText = "🌙";
 
 }
+const bestScoreElement = document.getElementById("bestScore");
+function showBestScore() {
+    let bestScore = localStorage.getItem("bestScore") || 0;
+
+    bestScoreElement.innerText = "Best Score: " + bestScore + "/" + questions.length;
+}
+
+showBestScore();
+let bestScore = localStorage.getItem("bestScore") || 0;
+
+if (score > Number(bestScore)) {
+    localStorage.setItem("bestScore", score);
+}
+
+showBestScore();
