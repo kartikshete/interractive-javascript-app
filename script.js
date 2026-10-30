@@ -96,7 +96,35 @@ for (let i = 0; i < currentQuestion.options.length; i++) {
     let button = document.createElement("button");
     button.innerText = currentQuestion.options[i];
     button.classList.add("option-btn");
+    button.addEventListener("click", function() {
+    checkAnswer(button, currentQuestion.options[i]);
+});
     optionsContainer.appendChild(button);
 }
+
+}
+// Check Answer Function
+
+function checkAnswer(button, selectedAnswer) {
+
+let correctAnswer = questions[currentIndex].answer;
+let buttons = optionsContainer.querySelectorAll("button");
+buttons.forEach(function(btn) {
+    btn.disabled = true;
+    if (btn.innerText === correctAnswer) {
+        btn.classList.add("correct");
+    }
+});
+if (selectedAnswer === correctAnswer) {
+    score++;
+    feedback.innerText = "Correct Answer!";
+    feedback.style.color = "green";
+} else {
+    feedback.innerText = "Wrong Answer!";
+    feedback.style.color = "red";
+    button.classList.add("wrong");
+}
+userAnswers.push(selectedAnswer);
+nextBtn.disabled = false;
 
 }
