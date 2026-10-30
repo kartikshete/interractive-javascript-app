@@ -197,3 +197,40 @@ questions.forEach(function(question, index) {
 // Review Button Event
 
 reviewBtn.addEventListener("click", reviewAnswers);
+const restartBtn = document.getElementById("restartBtn");
+const homeBtn = document.getElementById("homeBtn");
+const resultScreen = document.getElementById("resultScreen");
+const reviewScreen = document.getElementById("reviewScreen");
+// Restart Quiz Function
+
+function restartQuiz() {
+
+    currentIndex = 0;
+    score = 0;
+    userAnswers = [];
+
+    resultScreen.classList.add("hidden");
+    reviewScreen.classList.add("hidden");
+
+    quizScreen.classList.remove("hidden");
+
+    showQuestion();
+}
+
+// Restart Button Event
+
+restartBtn.addEventListener("click", restartQuiz);
+// Back to Home Function
+
+function goHome() {
+
+    quizScreen.classList.add("hidden");
+    resultScreen.classList.add("hidden");
+    reviewScreen.classList.add("hidden");
+
+    startScreen.classList.remove("hidden");
+}
+
+// Home Button Event
+
+homeBtn.addEventListener("click", goHome);
