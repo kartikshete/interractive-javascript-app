@@ -172,3 +172,28 @@ if (percentage >= 80) {
         "Try Again! You Can Do Better.";
 
 }
+// Review Answers Function
+
+function reviewAnswers() {
+
+resultScreen.classList.add("hidden");
+reviewScreen.classList.remove("hidden");
+let reviewContainer = document.getElementById("reviewContainer");
+reviewContainer.innerHTML = "";
+questions.forEach(function(question, index) {
+    let div = document.createElement("div");
+    div.classList.add("review-item");
+    let userAnswer = userAnswers[index];
+    div.innerHTML = `
+        <h3>${index + 1}. ${question.question}</h3>
+        <p>Your Answer: ${userAnswer}</p>
+        <p>Correct Answer: ${question.answer}</p>
+    `;
+    reviewContainer.appendChild(div);
+});
+
+}
+
+// Review Button Event
+
+reviewBtn.addEventListener("click", reviewAnswers);
