@@ -128,3 +128,19 @@ userAnswers.push(selectedAnswer);
 nextBtn.disabled = false;
 
 }
+// Next Question Function
+
+function nextQuestion() {
+
+currentIndex++;
+if (currentIndex < questions.length) {
+    showQuestion();
+} else {
+    showResult();
+}
+
+}
+
+// Next Button Event
+
+nextBtn.addEventListener("click", nextQuestion);
