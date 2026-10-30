@@ -38,3 +38,27 @@ const questions = [
 ];
 
 console.log(questions);
+// Get HTML Elements
+
+const startScreen = document.getElementById("startScreen");
+const quizScreen = document.getElementById("quizScreen");
+
+const startBtn = document.getElementById("startBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+const questionElement = document.getElementById("question");
+const optionsContainer = document.getElementById("optionsContainer");
+
+const questionCount = document.getElementById("questionCount");
+const progressBar = document.getElementById("progressBar");
+
+const feedback = document.getElementById("feedback");
+
+
+// Quiz Variables
+
+let currentIndex = 0;
+let score = 0;
+let userAnswers = [];
+
+console.log("Quiz is ready!");
