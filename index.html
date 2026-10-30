@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - JavaScript Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>QuizMaster</h1>
+    <button id="themeToggle">🌙</button>
+</header>
+<main class="container">
+    <!-- Start Screen -->
+    <section id="startScreen" class="screen">
+        <h2>Welcome to QuizMaster!</h2>
+        <p>Test your programming knowledge with our interactive quiz.</p>
+        <h3>10 Questions | Multiple Choice</h3>
+        <p id="bestScore">Best Score: 0</p>
+        <button id="startBtn">Start Quiz</button>
+    </section>
+    <!-- Quiz Screen -->
+    <section id="quizScreen" class="screen hidden">
+        <div class="quiz-info">
+            <span id="questionCount">Question 1 of 10</span>
+            <span id="timer">⏱ 30s</span>
+        </div>
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
+        <h2 id="question">Question goes here</h2>
+        <div id="optionsContainer"></div>
+        <p id="feedback"></p>
+        <button id="nextBtn" disabled>Next Question</button>
+    </section>
+    <!-- Result Screen -->
+    <section id="resultScreen" class="screen hidden">
+        <h2>Quiz Completed!</h2>
+        <h1 id="finalScore">0/10</h1>
+        <h3 id="percentage">0%</h3>
+        <p id="resultMessage"></p>
+        <button id="reviewBtn">Review Answers</button>
+        <button id="restartBtn">Restart Quiz</button>
+    </section>
+    <!-- Review Screen -->
+    <section id="reviewScreen" class="screen hidden">
+        <h2>Answer Review</h2>
+        <div id="reviewContainer"></div>
+        <button id="homeBtn">Back to Home</button>
+    </section>
+</main>
+<footer>
+    <p>© 2026 QuizMaster | Built with Raj Technologies</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
