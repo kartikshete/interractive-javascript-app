@@ -234,3 +234,42 @@ function goHome() {
 // Home Button Event
 
 homeBtn.addEventListener("click", goHome);
+// Dark and Light Mode
+
+const themeToggle = document.getElementById("themeToggle");
+
+// Theme Button Click
+
+themeToggle.addEventListener("click", function() {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        themeToggle.innerText = "☀️";
+
+        localStorage.setItem("theme", "dark");
+
+    } else {
+
+        themeToggle.innerText = "🌙";
+
+        localStorage.setItem("theme", "light");
+
+    }
+
+});
+
+// Remember User Theme
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeToggle.innerText = "☀️";
+
+} else {
+
+    themeToggle.innerText = "🌙";
+
+}
