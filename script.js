@@ -80,3 +80,23 @@ function startQuiz() {
 // Start Button Event
 
 startBtn.addEventListener("click", startQuiz);
+// Show Question Function
+
+function showQuestion() {
+
+let currentQuestion = questions[currentIndex];
+questionElement.innerText = currentQuestion.question;
+questionCount.innerText = "Question " + (currentIndex + 1) + " of " + questions.length;
+progressBar.style.width = ((currentIndex + 1) / questions.length) * 100 + "%";
+optionsContainer.innerHTML = "";
+feedback.innerText = "";
+nextBtn.disabled = true;
+// Show Options
+for (let i = 0; i < currentQuestion.options.length; i++) {
+    let button = document.createElement("button");
+    button.innerText = currentQuestion.options[i];
+    button.classList.add("option-btn");
+    optionsContainer.appendChild(button);
+}
+
+}
