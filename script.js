@@ -144,3 +144,31 @@ if (currentIndex < questions.length) {
 // Next Button Event
 
 nextBtn.addEventListener("click", nextQuestion);
+quizScreen.classList.add("hidden");
+
+resultScreen.classList.remove("hidden");
+
+let percentage = (score / questions.length) * 100;
+
+document.getElementById("finalScore").innerText =
+    score + "/" + questions.length;
+
+document.getElementById("percentage").innerText =
+    percentage + "%";
+
+if (percentage >= 80) {
+
+    document.getElementById("resultMessage").innerText =
+        "Excellent! Great Job!";
+
+} else if (percentage >= 50) {
+
+    document.getElementById("resultMessage").innerText =
+        "Good Work! Keep Practicing.";
+
+} else {
+
+    document.getElementById("resultMessage").innerText =
+        "Try Again! You Can Do Better.";
+
+}
