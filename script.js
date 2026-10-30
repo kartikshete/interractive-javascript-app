@@ -62,3 +62,21 @@ let score = 0;
 let userAnswers = [];
 
 console.log("Quiz is ready!");
+
+// Start Quiz Function
+
+function startQuiz() {
+
+    currentIndex = 0;
+    score = 0;
+    userAnswers = [];
+
+    startScreen.classList.add("hidden");
+    quizScreen.classList.remove("hidden");
+
+    showQuestion();
+}
+
+// Start Button Event
+
+startBtn.addEventListener("click", startQuiz);
